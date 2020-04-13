@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AviaTickets.ItemInfoPage"
+             Title="">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text=""
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   x:Name="LblNoTickets"/>
+
+            <ListView x:Name="itemInfoList"
+              HasUnevenRows="True"
+              ItemsSource="{Binding ItemInfoList}"
+              CachingStrategy="RecycleElement"
+              IsEnabled="True" 
+              ItemTapped="OnItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" HeightRequest="40" VerticalOptions="CenterAndExpand" Margin="10" >
+                                    <Label Text="Date : "   FontSize="16" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding depart_date}" FontSize="18" VerticalOptions="Center"  HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="Price : "   FontSize="16" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
+                                    <Label Text="{Binding value}" FontSize="18" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
