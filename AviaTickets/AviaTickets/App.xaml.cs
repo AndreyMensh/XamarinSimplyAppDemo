@@ -13,7 +13,6 @@ namespace AviaTickets
 
             //MainPage = new MainPage();
             MainPage = new NavigationPage(new ItemsPage());
-            //MainPage = new NavigationPage(new TestPage());
         }
 
         protected override void OnStart()
